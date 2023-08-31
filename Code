@@ -1,0 +1,29 @@
+
+*/#include<Adafruit_NeoPixel.h>
+*/#include <SoftwareSerial.h>
+
+#define PIN_LED 6
+#define NUM_LEDS 8
+
+Adafruit_NeoPixel strip ( NUM_LEDS,PIN_LED, NEO_GRB+NEO_KHZ800);
+SoftwareSerial mySerial (10,11);//RX,TX pins for the voice module 
+
+void setup() {strip.begin();
+strip.show();//Intialize all pixels to off 
+mySerial.begin(9600);//Initialize the voice model
+}
+
+void loop() {if (my Serial. avaliable())char command= my Serial.read();// Read voice command 
+}
+
+if (command=='0') turn On Lights(); else if (command=='F')Turn Off Lights();
+
+void turnOnlight () for ( int i=0;i<NUM_LEDS;i++)
+strip.setPixel color (i,255,255,255);// Set color to white (full brightness)
+
+strip.show();// Update the LED strip 
+
+void turnOfflight Lights (); for (int i=O;i<NUM_LEDS;i++) 
+strip.setPixel color (i,0,0,0);//Set color to black (off)
+
+strip.show ();// Update the LED strip) 
